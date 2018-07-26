@@ -19,7 +19,9 @@ class Paginas{
 					$module =  "views/modules/usuarios.php";
 				}
 				break;
-			case "fallo-ingreso":
+			case "fallo-ingreso-c":
+			case "fallo-ingreso-u":
+			case "fallo-ingreso-3":
 				$module =  "views/modules/ingresar.php";
 				break;
 			case "actualizado":

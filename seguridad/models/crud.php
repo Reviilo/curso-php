@@ -37,7 +37,7 @@ class Datos extends Conexion {
 
         $stmt = Conexion::conectar()->prepare(
             "SELECT
-                usuario, password
+                usuario, password, intentos
             FROM
                 $tabla
             WHERE
@@ -138,6 +138,30 @@ class Datos extends Conexion {
 
         $stmt -> bindParam(":id", $id, PDO::PARAM_INT);
 
+        return $stmt -> execute();
+
+        $stmt -> close();
+    }
+
+    # ACTUALIZAR INTENTOS DE INGRESO A LA APLICACION
+    #-------------------------------------
+
+    public function intentoIngresoUsuarioModel ($datos, $tabla) {
+
+        $stmt = Conexion::conectar()->prepare(
+            "
+            UPDATE 
+                $tabla
+            SET 
+                intentos = :intentos
+            WHERE 
+                usuario = :usuario
+            "
+        );
+
+        $stmt -> bindParam(":usuario", $datos["usuarioIngresado"], PDO::PARAM_STR);
+        $stmt -> bindParam(":intentos", $datos["numeroIntentos"], PDO::PARAM_INT);
+        
         return $stmt -> execute();
 
         $stmt -> close();

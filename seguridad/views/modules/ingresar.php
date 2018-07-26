@@ -16,7 +16,14 @@
 		$mvc -> ingresoUsuarioController();
 
 		if ( isset( $_GET["action"] ) ) {
-			if ( $_GET["action"] === "fallo-ingreso" ) {
-				echo "<p class='mensaje-error'>El Usuario o la contraseña no coinciden.</p>";
+			if ( $_GET["action"] === "fallo-ingreso-c" ) {
+				echo "<p class='mensaje-error'>La contraseña ingresada no coincide, intentelo nuevamente.</p>";
+			}
+			if ( $_GET["action"] === "fallo-ingreso-u" ) {
+				echo "<p class='mensaje-error'>El usuario ingresado no se encontro en la base de datos.</p>";
+			}
+
+			if ( $_GET["action"] === "fallo-ingreso-u" ) {
+				echo "<p class='mensaje-error'>Debe llenar el recapchat.</p>";
 			}
 		}

@@ -1,0 +1,9 @@
+
+## Options All -Indexes
+
+# Urls Amigables
+# Activar Rewrite Engine
+
+## RewriteEngine on
+
+## RewriteRule ^(\w+)$ index.php?action=$1

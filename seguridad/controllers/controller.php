@@ -108,17 +108,57 @@ class MvcController{
 				);
 	
 				$res = Datos::ingresoUsuarioModel($datos, "usuarios");
+
+				$intentos = $res["intentos"];
+				$maxIntentos = 2;
+
+				if ( $intentos < $maxIntentos ) {
+
+					if ( $res["usuario"] === $_POST["usuario"] && password_verify($_POST["password"], $res["password"])  ) {
 	
-				if ( $res["usuario"] === $_POST["usuario"] && password_verify($_POST["password"], $res["password"])  ) {
-	
-					session_start();
-	
-					$_SESSION["validar"] = true;
-	
-					header("location:index.php?action=usuarios");
+						session_start();
+		
+						$_SESSION["validar"] = true;
+
+						$datos = array(
+							"usuarioIngresado" 	=> 	$usuario,
+							"numeroIntentos"	=>	0
+						);
+
+						$res = Datos::intentoIngresoUsuarioModel($datos, "usuarios");
+		
+						header("location:index.php?action=usuarios");
+					} else {
+						++$intentos;
+
+						$datos = array(
+							"usuarioIngresado" 	=> 	$usuario,
+							"numeroIntentos"	=>	$intentos
+						);
+
+						$res = Datos::intentoIngresoUsuarioModel($datos, "usuarios");
+
+						if ( $res ) {
+							header("location:index.php?action=fallo-ingreso-c");
+							echo "La contraseña ingresada no coincide, intentelo nuevamente.";
+						} else {
+							header("location:index.php?action=fallo-ingreso-u");
+							echo "El usuario ingresado no se encontro en la base de datos.";
+						}
+					}
+
 				} else {
-					header("location:index.php?action=fallo-ingreso");
+					$datos = array(
+						"usuarioIngresado" 	=> 	$usuario,
+						"numeroIntentos"	=>	0
+					);
+
+					$res = Datos::intentoIngresoUsuarioModel($datos, "usuarios");
+
+					header("location:index.php?action=fallo-ingreso-3");
 				}
+	
+				
 			}
 
 		}
