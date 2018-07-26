@@ -1,0 +1,121 @@
+/* Default */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Default */
+
+nav {
+    position:relative;
+    margin:auto;
+    width:100%;
+    height:auto;
+    background:black;
+}
+
+nav ul {
+    position:relative;
+    margin:auto;
+    width:50%;
+    text-align: center;
+}
+
+nav ul li {
+    display:inline-block;
+    width:24%;
+    line-height: 50px;
+    list-style: none;
+}
+
+nav ul li a {
+    color:white;
+    text-decoration: none;
+}
+
+section {
+    position: relative;
+    margin: auto;
+    width:400px;
+}
+
+section h1 {
+    position: relative;
+    margin: auto;
+    padding:10px;
+    text-align: center;
+}
+
+section form {
+    position:relative;
+    margin:auto;
+    width:400px;
+}
+
+section form input {
+    display:inline-block;
+    padding:10px;
+    width:95%;
+    margin:5px;
+    margin-bottom: 25px;
+}
+
+section form input#tyc {
+    margin-bottom: 0;
+}
+
+section form input[type="submit"] {
+    position:relative;
+    margin:20px auto;
+    left:4.5%;
+
+}
+
+table{
+    position:relative;
+    margin:auto;
+    width:100%;
+    left:-10%;
+}
+
+table thead tr th{
+    padding:10px;
+}
+
+table tbody tr td{
+    padding:10px;
+}
+
+.mensaje-error {
+    text-align: center;
+    color: red;
+}
+
+.mensaje-exitoso {
+    text-align: center;
+    color: green;
+}
+
+
+.terminos-label {
+    display: block;
+}
+
+.terminos-input {
+    display: inline;
+    width: auto;
+}
+
+.terminos-texto {
+    margin-bottom:  25px;
+}
+
+.terminos-texto a {
+    color: #199cff;
+}

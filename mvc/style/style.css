@@ -1,0 +1,50 @@
+/* -- Defaults --  */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* -- Style --  */
+
+header {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+nav {
+    background-color: black;
+    margin: 20px 0;
+}
+
+ul {
+    list-style: none;
+    background: #000;
+    display: table;
+    margin: 0 auto;
+}
+
+li {
+    display: table-cell;
+}
+
+li a {
+    color: #fff;
+    padding: 25px;
+    margin: 0 10px;
+    display: block;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    text-align: center
+}
