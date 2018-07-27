@@ -32,6 +32,15 @@ nav ul li {
     width:24%;
     line-height: 50px;
     list-style: none;
+    /* background: linear-gradient(
+      53deg,
+      #ccfffc,
+      #ffcccf
+    ); */
+}
+
+nav ul li:hover {
+    transform: scale(1.1);
 }
 
 nav ul li a {
@@ -118,4 +127,59 @@ table tbody tr td{
 
 .terminos-texto a {
     color: #199cff;
+}
+
+/* Heart */
+
+.heart {
+    position: absolute;
+    margin: auto;
+    top: 20%;
+    right: 20%;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+  }
+.heart:after {
+    background-color: pink;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+}
+.heart:before {
+    content: '';
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+}
+
+
+
+.heart:hover,
+.heart:hover:before,
+.heart:hover:after {
+    transform: scale(1.1);
+}
+
+.heart:hover {
+    transform: rotate(-45deg);
+    top: 23%;
+}
+
+.heart:hover:before {
+    left: 2px;
+    top: -30px;
+}
+.heart:hover:after {
+    top: -2px;
+    left: 30px;
 }

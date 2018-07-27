@@ -10,7 +10,7 @@
 	<label for="email">Email</label>
 	<input type="email" placeholder="Email" name="email" id="email" required>
 
-	<label class="terminos-label" for="terminosYCondiciones">Terminos y Condiciones</label>
+	<!-- <label class="terminos-label" for="terminosYCondiciones">Terminos y Condiciones</label> -->
 	<p class="terminos-texto">
 		<input class="terminos-input" type="checkbox" name="terminosYCondiciones" id="tyc" title="Debe marcar los terminos y condiciones" required> 
 		Acepta los terminos y Condiciones, para mas informacion puede leer los <a href="" target="_blank">"Terminos y Condiciones"</a>

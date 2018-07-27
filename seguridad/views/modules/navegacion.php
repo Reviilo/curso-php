@@ -9,6 +9,7 @@
 					<li><a href="index.php">Registro</a></li>
 					<li><a href="ingresar">Ingreso</a></li>
 				</ul>
+				<div class="heart"></div>
 			</nav>
 		
 		<?php
@@ -20,7 +21,9 @@
 				<li><a href="usuarios">Usuarios</a></li>
 				<li><a href="salir">Salir</a></li>
 			</ul>
+			<div class="heart"></div>
 		</nav>
+		
 
 		
 		<?php
