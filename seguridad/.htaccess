@@ -1,9 +1,16 @@
 
-## Options All -Indexes
+Options All -Indexes
 
 # Urls Amigables
 # Activar Rewrite Engine
 
-## RewriteEngine on
+RewriteEngine on
 
 ## RewriteRule ^(\w+)$ index.php?action=$1
+
+RewriteRule ^([a-zA-Z0-9/]+)$ index.php?action=$1
+
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>

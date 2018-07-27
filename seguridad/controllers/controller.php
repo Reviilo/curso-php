@@ -195,10 +195,16 @@ class MvcController{
 		echo '
 			<input type="hidden" value="'.$res[0].'" name="id" >
 
+			<label for="usuario">Usuario</label>
 			<input type="text" value="'.$res[1].'" placeholder="Usuario" name="usuario" id="usuario" required>
 
-			<input type="text" value="'.$res[2].'" placeholder="Contraseña" name="password" id="password" required>
-		
+			<label for="lastPassword">Contraseña anterior</label>
+			<input type="text" value="" placeholder="Contraseña" name="lastPassword" id="lastPassword">
+
+			<label for="password">Nueva contraseña</label>
+			<input type="text" value="" placeholder="Contraseña" name="password" id="password">
+
+			<label for="email">Email</label>
 			<input type="email" value="'.$res[3].'" placeholder="Email" name="email" id="email" required>
 		';
 	}
@@ -216,6 +222,7 @@ class MvcController{
 			$id = MvcController::test_input($_POST["id"]);
 			$email = MvcController::test_input($_POST["email"]);
 			$usuario = MvcController::test_input($_POST["usuario"]);
+			$lastPassword = MvcController::test_input($_POST["lastPassword"]);
 			$password = MvcController::test_input($_POST["password"]);
 			
 			if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -246,8 +253,6 @@ class MvcController{
 				}
 			}
 
-		} else {
-			echo "error";
 		}
 
 	}
@@ -271,5 +276,3 @@ class MvcController{
 
 	}
 }
-
-?>
